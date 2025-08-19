@@ -1,13 +1,13 @@
 <?php
 session_start();
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Display Page</title>
 </head>
 <body>
     <h1>Create Todo List</h1>
@@ -26,7 +26,6 @@ session_start();
             </tr>
         </table><br>     
     </form>
-
     <h1>Your Todo List</h1>
     <table border="1" cellpadding>
        <thead>
@@ -45,11 +44,11 @@ session_start();
     </table>
 
     <div>
-        <form action="logout.php">
+        <form action="./Backend/logout.php">
             <br>Do you wanted to Logout? <input type="submit" value="Logout">
         </form>
     </div>
-    
-    <script src="addTodo.js"></script>
+
+    <script src="./Script/Operations.js"></script>
 </body>
 </html>

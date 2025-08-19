@@ -17,7 +17,7 @@
         
         foreach($_SESSION['listItems'] as $key => $item) {
             echo "<tr id='$key'>";
-                echo "<td>".$key."</td>";
+                echo "<td>".($key+1)."</td>";
                 echo "<td>".$item['title']."</td>";
                 echo "<td>".$item['description']."</td>";
                 echo "<td>".$item['duedate']."</td>";

@@ -7,7 +7,7 @@
 </head>
 <body>
     <div>
-        <form action="loginBkd.php" method="post">
+        <form action="./Backend/loginBkd.php" method="post">
             Email address: <input type="text" name="email" ><br>
             Password: <input type="password" name="password"><br>
             <input type="submit" name="submit">

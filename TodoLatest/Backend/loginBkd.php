@@ -8,7 +8,7 @@ if(isset($_POST['email']) && isset($_POST['password'])) {
         $_SESSION['email'] = $email;
         $_SESSION['password'] = $password;
 
-        header("Location:index.php");
+        header("Location: /TodoLatest/index.php");
     } else {
         echo "Invalid Email or Password";
     }
