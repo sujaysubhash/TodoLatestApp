@@ -11,7 +11,7 @@ session_start();
 </head>
 <body>
     <h1>Create Todo List</h1>
-    <form onsubmit="addTodoList(event)" id="todo-form">
+    <form id="todo-form">
         <table>
             <tr>
                 <th>Title</th>
@@ -19,9 +19,9 @@ session_start();
                 <th>Due Date</th>
             </tr>
             <tr>
-                <td><input type="text" name="title" required></td>
-                <td><input type="text" name="description" required></td>
-                <td><input type="date" name="duedate" required></td>
+                <td><input type="text" name="title" id="title" required></td>
+                <td><input type="text" name="description" id="description" required></td>
+                <td><input type="date" name="duedate" id="duedate" required></td>
                 &nbsp;&nbsp;<td><input type="submit" value="Create Todo" name="submit"></td>
             </tr>
         </table><br>     
@@ -39,7 +39,9 @@ session_start();
        </thead>
        <tbody id="todo-list">
             <tr id='<?php echo $key; ?>'></tr>
-            <button hidden type='button' onclick='deleteAction($todoId)'></button>
+            <!-- <button hidden type='button' id='dlt-btn' onclick='deleteAction($todoId)'></button> -->
+            <button hidden type='button' class=".dlt-btn" id='<?php echo $todoId ?>'></button>
+
        </tbody>
     </table>
 
@@ -49,6 +51,8 @@ session_start();
         </form>
     </div>
 
-    <script src="./Script/Operations.js"></script>
+    <!-- <script src="./Script/Operations.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./Script/JqOperations.js"></script>
 </body>
 </html>
