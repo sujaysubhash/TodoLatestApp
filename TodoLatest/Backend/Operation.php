@@ -1,10 +1,10 @@
 <?php
     session_start();
-
+    require __DIR__ . '/../Database/dbOperation.php';
+    
     class Operation {
         public static function addTodo($title, $desc, $date) {
                 
-
                 if(!isset($_SESSION['listItems'])){
                     $_SESSION['listItems'] = [];
                 }
@@ -37,17 +37,23 @@
 
         public static function loginBkd($user_email, $user_password) {   
 
-            $auth_email = "sujay123@gmail.com";
-            $auth_password = "sujay";
-
-            if($user_email == $auth_email && $user_password == $auth_password) {
-                $_SESSION['email'] = $user_email;
-                $_SESSION['password'] = $user_password;
-                
+            if(dbOperation::loginCheck($user_email, $user_password)) {
                 echo "success";
             } else {
                 echo "faliure";
             }
+
+            // $auth_email = "sujay123@gmail.com";
+            // $auth_password = "sujay";
+
+            // if($user_email == $auth_email && $user_password == $auth_password) {
+            //     $_SESSION['email'] = $user_email;
+            //     $_SESSION['password'] = $user_password;
+                
+            //     echo "success";
+            // } else {
+            //     echo "faliure";
+            // }
             
         }
 
