@@ -7,11 +7,18 @@
 </head>
 <body>
     <div>
-        <form action="./Backend/loginBkd.php" method="post">
-            Email address: <input type="text" name="email" ><br>
-            Password: <input type="password" name="password"><br>
+        <form id='login-form'>
+            Email address: <input type="text" id="email" name="email" ><br>
+            Password: <input type="password" id="password" name="password"><br>
             <input type="submit" name="submit">
         </form>
     </div>
+    <div>
+        <p id="response-p"></p>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./Script/jqOperations.js"></script>
+
 </body>
 </html>

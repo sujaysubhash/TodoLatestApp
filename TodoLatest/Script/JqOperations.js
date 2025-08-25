@@ -1,6 +1,8 @@
 $(document).ready(function() {
-    $('#todo-form').submit(function(event) {
-        event.preventDefault();
+ 
+    $('#todo-form').submit(function(e) {
+        console.log("Addtodo");
+        e.preventDefault();
 
         const formData = {
             title: $('#title').val(), 
@@ -9,33 +11,51 @@ $(document).ready(function() {
         };
 
         $.ajax({
-            url: "/TodoLatest/Backend/addTodo.php",
+            url: "/TodoLatest/Backend/commonCall.php",
             method: "POST", 
             data: formData,
             dataType: 'html',
 
             success: function(response) {
                 $("#todo-list").html(response);
-                $("#todo-list").reset();
+                $("#todo-form")[0].reset();
             }
         });
 
     });
 
-    $('.dlt-btn').click(function() {
-        let recordId = $('button').attr('id');
-
+    
+    $("#login-form").submit( function(e) {
+        e.preventDefault();
+    
+        const formData = {
+            email: $("#email").val(),
+            password: $("#password").val()
+        }
+    
         $.ajax({
-            url: "/TodoLatest/Backend/removeRecord.php", 
+            url: "/TodoLatest/Backend/commonCall.php",
             method: "POST", 
-            data: recordId,
-            dataType: 'html',
+            data: formData,
+            dataType : 'text',
+            success: function(response) {
+                if(response.trim() == "success") {
+                    window.location.href = "index.php";
+                } else {
+                    alert("Invalid credentials");
+                    $("#response-p").text("Invalid user credentials");
 
-            success: function() {
-                $("#"+recordId).remove();
+                }
             }
+    
         });
-
     });
+
+   
+
+
+
 });
+
+
 

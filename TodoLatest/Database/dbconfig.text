@@ -1,0 +1,11 @@
+CREATE DATABASE tododb;
+
+USE tododb;
+
+CREATE TABLE users(
+    userid INT PRIMARY KEY,
+    email VARCHAR(50),
+    password VARCHAR(50)    
+);
+
+

@@ -38,21 +38,25 @@ session_start();
             </tr>
        </thead>
        <tbody id="todo-list">
-            <tr id='<?php echo $key; ?>'></tr>
-            <!-- <button hidden type='button' id='dlt-btn' onclick='deleteAction($todoId)'></button> -->
-            <button hidden type='button' class=".dlt-btn" id='<?php echo $todoId ?>'></button>
-
+            <tr class='list-row'>
+            <button hidden type='button' class="dlt-btn"></button>
+            </tr>
        </tbody>
     </table>
 
     <div>
-        <form action="./Backend/logout.php">
-            <br>Do you wanted to Logout? <input type="submit" value="Logout">
+        <form id="logout-form">
+            <br>Do you wanted to Logout? <input type="submit"  value="Logout">
         </form>
+
     </div>
 
-    <!-- <script src="./Script/Operations.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./Script/JqOperations.js"></script>
+    <script src="./Script/addTodo.js"></script>
+    <script src="./Script/dlt.js"></script>
+    <script src="./Script/logout.js"></script>
+
+
 </body>
 </html>
